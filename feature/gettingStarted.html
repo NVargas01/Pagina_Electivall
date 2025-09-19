@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next.js y Vercel</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .logo h1 {
+      font-size: 2.5em;
+      color: #111;
+    }
+
+    .feature-card {
+      background: #fff;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      color: #0070f3;
+    }
+
+    h3 {
+      margin-top: 20px;
+      color: #444;
+    }
+
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>Servicio en la Nube</h1>
+      </div>
+    </header>
+
+
+    <section class="features">
+      <div class="feature-card">
+        <h2>Next.js</h2>
+        <p>
+          Next.js es un framework de React que facilita la creación de aplicaciones web completas. 
+          Al desplegarse en <strong>Vercel</strong>, ofrece ventajas como configuración cero, escalabilidad automática, 
+          mayor rendimiento y disponibilidad global.
+        </p>
+        <p>Entre sus principales características están:</p>
+        <ul>
+          <li><strong>ISR (Incremental Static Regeneration):</strong> actualiza contenido sin necesidad de redeploy.</li>
+          <li><strong>SSR (Server-Side Rendering):</strong> renderiza contenido dinámico en cada petición.</li>
+          <li><strong>Streaming:</strong> carga datos por partes para mejorar la velocidad.</li>
+          <li><strong>Optimización automática:</strong> de imágenes, fuentes y tarjetas sociales.</li>
+          <li><strong>Herramientas extra:</strong> Middleware, Draft Mode, Web Analytics y métricas de rendimiento.</li>
+        </ul>
+        <p>
+          En resumen, usar Next.js en Vercel significa tener despliegues rápidos, optimización integrada 
+          y un mejor rendimiento global para aplicaciones modernas.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="features">
+      <div class="feature-card">
+        <h2>Vercel: Conceptos Fundamentales de Proyectos y Despliegues</h2>
+        <p>
+          Un proyecto en Vercel representa la aplicación que usted ha desplegado. Múltiples proyectos pueden estar asociados a un único repositorio de código.
+          Un despliegue es el resultado de una compilación exitosa del proyecto. Cada despliegue se genera automáticamente al realizar acciones como subir un commit a un repositorio conectado o utilizar la interfaz de línea de comandos (CLI) de Vercel. Cada instancia de despliegue recibe una URL única.
+        </p>
+        <p>
+          El proyecto es la aplicación base, mientras que el despliegue es una versión específica y funcional de dicha aplicación, lista para ser accedida en línea. Para iniciar, el proceso consiste en crear un proyecto, ya sea importando uno existente o utilizando una de las plantillas disponibles.
+        </p>
+
+        <h3>Proceso de Despliegue con Plantillas en Vercel</h3>
+        <ol>
+          <li><strong>Selección de una Plantilla:</strong> Explorar el catálogo de plantillas en la plataforma de Vercel.</li>
+          <li><strong>Despliegue de la Plantilla:</strong> Inicie el proceso haciendo clic en el botón correspondiente.</li>
+          <li><strong>Conexión con el Proveedor de Git:</strong> Vercel crea un nuevo repositorio conectado.</li>
+          <li><strong>Ejecución del Despliegue:</strong> Vercel inicia automáticamente la compilación.</li>
+          <li><strong>Visualización del Proyecto:</strong> Se asigna un dominio al despliegue.</li>
+          <li><strong>Clonación Local del Proyecto:</strong> Clone el repositorio en su máquina.</li>
+        </ol>
+
+        <h3>Importar un Proyecto Existente a Vercel</h3>
+        <ol>
+          <li><strong>Conectar con el Proveedor de Git:</strong> Seleccione GitHub, GitLab o BitBucket.</li>
+          <li><strong>Importar el Repositorio:</strong> Seleccione su proyecto de la lista.</li>
+          <li><strong>Configurar Opciones:</strong> Personalice comandos o variables si es necesario.</li>
+          <li><strong>Desplegar el Proyecto:</strong> Presione "Deploy".</li>
+          <li><strong>Ver el Despliegue:</strong> Acceda al dominio generado.</li>
+        </ol>
+
+        <h3>Dominios en Vercel</h3>
+        <p>
+          Puede <strong>comprar un dominio nuevo</strong> directamente en Vercel o <strong>usar un dominio existente</strong>.
+        </p>
+        <ul>
+          <li>Dominio apex (ej. ejemplo.com)</li>
+          <li>Subdominio (ej. blog.ejemplo.com)</li>
+          <li>Dominio wildcard (ej. *.ejemplo.com)</li>
+        </ul>
+
+        <h3>Cómo Usar un Dominio Existente en Vercel</h3>
+        <ol>
+          <li><strong>Añadir el Dominio:</strong> En la configuración del proyecto.</li>
+          <li><strong>Configurar los Registros DNS:</strong> Según el tipo de dominio (A, CNAME, TXT o Nameservers).</li>
+        </ol>
+
+        <h3>Colaboración en Vercel</h3>
+        <p>
+          Vercel despliega automáticamente cada commit que se sube. El flujo de trabajo colaborativo incluye:
+        </p>
+        <ul>
+          <li><strong>Producción:</strong> Rama principal.</li>
+          <li><strong>Vista previa:</strong> Para cualquier otra rama.</li>
+        </ul>
+
+        <h3>Crear un Despliegue de Vista Previa</h3>
+        <ol>
+          <li>Haz tus cambios en una nueva rama.</li>
+          <li>Sube tus cambios y crea un pull request.</li>
+          <li>Vercel genera un enlace de vista previa automáticamente.</li>
+        </ol>
+
+        <h3>Comentar y Compartir Vistas Previas</h3>
+        <ul>
+          <li><strong>Abrir y autenticar:</strong> Activa la barra de comentarios.</li>
+          <li><strong>Compartir con colaboradores:</strong> Enviar enlace de vista previa.</li>
+          <li><strong>Comentar:</strong> Los colaboradores pueden dejar comentarios en la vista previa.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Tfdfdf.
+    </footer>
+  </div>
+</body>
+</html>
