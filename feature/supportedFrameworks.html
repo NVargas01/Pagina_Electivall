@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de Vercel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        section {
+            padding: 20px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature {
+            background-color: #e8f0fe;
+            padding: 15px;
+            margin-top: 10px;
+            border-left: 5px solid #0070f3;
+        }
+
+        .code-example {
+            background-color: #f7f7f7;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #222;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentación de Vercel</h1>
+        
+    </header>
+
+    <section>
+    <h2>¿Qué es Vercel?</h2>
+    <p>Vercel es una plataforma de despliegue y hosting optimizada para desarrolladores frontend. Permite crear, previsualizar y desplegar aplicaciones web de forma sencilla y eficiente, optimizada para sitios estáticos y aplicaciones basadas en JavaScript.</p>
+    <p>Una de sus características más destacadas es su integración con frameworks como <strong>Next.js</strong>, haciendo que la implementación de proyectos de React sea aún más rápida y sencilla. Vercel se encarga de todo, desde la integración con tu repositorio hasta el despliegue en producción con solo un comando.</p>
+</section>
+
+
+    <section>
+    <h2>Características Principales</h2>
+    <div class="feature">
+        <h3>Despliegue Automático</h3>
+        <p>Con Vercel, cada vez que subas cambios a tu repositorio (por ejemplo, en GitHub, GitLab o Bitbucket), tu proyecto se desplegará automáticamente. No necesitas realizar pasos adicionales.</p>
+    </div>
+    <div class="feature">
+        <h3>Optimizado para Next.js</h3>
+        <p>Vercel es la plataforma oficial recomendada para desplegar aplicaciones basadas en <strong>Next.js</strong>. Ofrece un entorno optimizado para características como Server-Side Rendering (SSR) y Generación Estática de Páginas (SSG).</p>
+    </div>
+    <div class="feature">
+        <h3>Soporte para Serverless Functions</h3>
+        <p>Vercel permite la creación de funciones serverless. Esto significa que puedes escribir funciones de backend como parte de tu proyecto y Vercel se encarga de escalarlas automáticamente.</p>
+    </div>
+    <div class="feature">
+        <h3>Previsualización Instantánea</h3>
+        <p>Con cada cambio, Vercel genera una vista previa del proyecto, lo que facilita compartirlo con tu equipo o stakeholders para pruebas rápidas.</p>
+    </div>
+</section>
+
+    <section>
+    <h2>Guías de Uso</h2>
+    <h3>1. Configuración Inicial</h3>
+    <p>Para empezar a usar Vercel, solo necesitas una cuenta en <a href="https://vercel.com" target="_blank">Vercel.com</a>. Después de crear tu cuenta, conecta tu repositorio de GitHub, GitLab o Bitbucket para facilitar los despliegues automáticos.</p>
+
+    <h3>2. Despliegue de un Proyecto</h3>
+    <p>Una vez conectado tu repositorio, puedes desplegar tu proyecto con solo ejecutar el siguiente comando en la terminal:</p>
+    <div class="code-example">
+        <pre>vercel --prod</pre>
+    </div>
+    <p>Este comando hace que Vercel despliegue tu proyecto directamente en producción. Si solo deseas hacer una prueba, puedes omitir la opción `--prod` para crear un despliegue de previsualización.</p>
+
+    <h3>3. Personalización de Configuración</h3>
+    <p>Para personalizar cómo se despliega tu proyecto, puedes configurar un archivo llamado <code>vercel.json</code>. Este archivo te permite definir rutas, funciones serverless, variables de entorno y más.</p>
+    
+    <div class="code-example">
+        <pre>
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ]
+}
+        </pre>
+    </div>
+    <p>Este archivo define una configuración básica para un proyecto Node.js, donde se especifica la ruta de entrada y el tipo de construcción.</p>
+</section>
+
+<section>
+    <h2>Integraciones</h2>
+    <p>Vercel se integra con una amplia variedad de servicios, lo que facilita la automatización y la extensión de tu flujo de trabajo. Algunas de las integraciones más comunes incluyen:</p>
+    <ul>
+        <li><strong>GitHub</strong>: Cada vez que hagas un push a tu repositorio, Vercel automáticamente desplegará la nueva versión de tu proyecto.</li>
+        <li><strong>GitLab</strong>: Similar a GitHub, puedes conectar tu repositorio de GitLab para despliegues automáticos.</li>
+        <li><strong>Slack</strong>: Recibe notificaciones en Slack cuando tus despliegues estén listos o cuando ocurran errores.</li>
+        <li><strong>Google Analytics</strong>: Agrega Google Analytics para rastrear el comportamiento de los usuarios de tu aplicación.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Código de Ejemplo</h2>
+    <p>A continuación se muestra un ejemplo básico de una página de Next.js desplegada en Vercel:</p>
+    
+    <div class="code-example">
+        <pre>
+import React from 'react';
+
+export default function Home() {
+  return (
+    <div>
+      <h1>¡Hola, Vercel!</h1>
+      <p>Bienvenido a tu primera página desplegada en Vercel con Next.js.</p>
+    </div>
+  );
+}
+        </pre>
+    </div>
+
+    <p>Este código se puede usar como punto de partida para cualquier proyecto en Next.js. Cuando lo subas a un repositorio y lo conectes a Vercel, automáticamente se generará un despliegue en la nube.</p>
+</section>
+
+
+<section>
+    <h2>Conclusión</h2>
+    <p>Vercel es una plataforma poderosa y fácil de usar para el despliegue y hosting de aplicaciones web modernas. Su integración perfecta con frameworks como Next.js, así como sus características avanzadas como despliegue automático y funciones serverless, lo convierten en una excelente opción para cualquier desarrollador.</p>
+    <p>Ahora que sabes cómo configurar y desplegar tus proyectos con Vercel, puedes empezar a experimentar con funciones más avanzadas, como la personalización de configuraciones y la integración con otros servicios.</p>
+</section>
+
+
+    <footer>
+        <p>Documentación proporcionada por <a href="https://vercel.com" target="_blank">Vercel</a>.</p>
+    </footer>
+</body>
+</html>
